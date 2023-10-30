@@ -36,3 +36,31 @@ export function delArticleCate(id) {
     }
   })
 }
+
+export function getArticleList(params) {
+  return request({
+    url: '/my/article/list',
+    params
+  })
+}
+
+export function getArticleDetail(id) {
+  return request({
+    url: '/my/article/info',
+    params: {
+      id
+    }
+  })
+}
+
+export function publishArticle(data) {
+  return request.post('/my/article/add', data)
+}
+
+export function updateArticle(data) {
+  return request({
+    url: '/my/article/info',
+    method: 'put',
+    data
+  })
+}

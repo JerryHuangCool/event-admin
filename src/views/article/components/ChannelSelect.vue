@@ -5,6 +5,9 @@ const cateList = ref([])
 defineProps({
   value: {
     type: [String, Number]
+  },
+  width: {
+    type: String
   }
 })
 const emit = defineEmits(['input'])
@@ -16,7 +19,7 @@ getCate()
 </script>
 
 <template>
-  <el-select :value="value" @change="emit('input')">
+  <el-select :value="value" @change="emit('input')" :style="{ width }">
     <el-option
       v-for="item in cateList"
       :key="item.id"
